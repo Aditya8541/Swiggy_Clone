@@ -3,7 +3,7 @@ const Card = (props) => {
   const { cloudinaryImageId, name, cuisines, avgRating } = props.resData.info;
   // console.log(image);
   return (
-    <div className="w-55 pb-1 rounded-t-xl bg-gray-200 shadow-md  hover:shadow-xl cursor-pointer hover:bg-gray-300">
+    <div className="w-55 pb-1 rounded-t-xl bg-gray-200 shadow-md  transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer ">
       <img
         className="h-40 w-full object-cover rounded-t-xl"
         src={URL + cloudinaryImageId}
