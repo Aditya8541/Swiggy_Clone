@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { removeItem , updateItems } from "../utils/cartSlice";
+
 
 const CartPageCard = (props) => {
     const dispatch = useDispatch();
@@ -16,13 +18,38 @@ const CartPageCard = (props) => {
             alert("Quantity must be atleast 1");
             setinputValue(props.data.quantity);
         }
+        else if (inputValue === props.data.quantity) {
+    
+      toast(`${props.data.card.info.name} is already set to ${inputValue} ⚡`, {
+      icon: "ℹ️",
+      style: {
+        borderRadius: "10px",
+        background: "#222",
+        color: "#fff",
+      },
+    });
+  }
         else{
             dispatch(updateItems({id , inputValue}))
+            toast.success(`${props.data.card.info.name} quantity updated to ${inputValue}  🛒`, {
+        style: {
+      borderRadius: "10px",
+      background: "#333",
+      color: "#fff",
+    },
+  });
         }
     }
   
   const handleremove  = (id) => {
     dispatch(removeItem(id))
+    toast.success(`${props.data.card.info.name} removed from cart  🛒`, {
+        style: {
+      borderRadius: "10px",
+      background: "#333",
+      color: "#fff",
+    },
+  });
   }
 
  
