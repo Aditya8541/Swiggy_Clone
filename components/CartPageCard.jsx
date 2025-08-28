@@ -77,8 +77,8 @@ const CartPageCard = (props) => {
                   value={inputValue}
                   onChange={(e) => setinputValue(e.target.value)}
                   />
-                  <button className="px-3 py-1 text-gray-900 cursor-pointer rounded-md bg-amber-400" onClick={() => handleupdate(props.data.card.info.id)}>Update</button>
-                  <button className="px-3 py-1 text-gray-900 cursor-pointer rounded-md bg-red-400" onClick={() => handleremove(props.data.card.info.id)}>Remove</button>
+                  <button className="px-3 py-1 text-gray-900 cursor-pointer  rounded-md bg-amber-400 hover:bg-amber-500" onClick={() => handleupdate(props.data.card.info.id)}>Update</button>
+                  <button className="px-3 py-1 text-gray-900 cursor-pointer rounded-md bg-red-400 hover:bg-red-500" onClick={() => handleremove(props.data.card.info.id)}>Remove</button>
                 </div>
               </div>
 
